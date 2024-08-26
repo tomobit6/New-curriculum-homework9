@@ -20,4 +20,3 @@ public class WesternMovie implements Checking {
     System.out.println("高評価の洋画は以下の通りです。");
   }
 }
-
