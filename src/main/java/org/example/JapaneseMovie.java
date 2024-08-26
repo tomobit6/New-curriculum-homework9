@@ -13,28 +13,25 @@ public class JapaneseMovie implements Checking {
     this.movieReviewRating = movieReviewRating;
   }
 
-  JapaneseMovie movie1 = new JapaneseMovie("SLAMDUNK", 4.3);
-  JapaneseMovie movie2 = new JapaneseMovie("千と千尋の神隠し", 4.1);
-  JapaneseMovie movie3 = new JapaneseMovie("22年目の告白私が殺人犯です", 3.6);
-  JapaneseMovie movie4 = new JapaneseMovie("怒り", 3.9);
-  JapaneseMovie movie5 = new JapaneseMovie("横道世之介", 3.9);
+  public String getMovieName() {
+    return movieName;
+  }
 
+  public double getMovieReviewRating() {
+    return movieReviewRating;
+  }
+
+  @Override
   public Map<String, Double> reviewMap() {
+    // ここでは単一の映画情報しか持っていないので、単一のエントリを返します
     Map<String, Double> movieReviewMap = new HashMap<>();
-    movieReviewMap.put(movie1.movieName, movie1.movieReviewRating);
-    movieReviewMap.put(movie2.movieName, movie2.movieReviewRating);
-    movieReviewMap.put(movie3.movieName, movie3.movieReviewRating);
-    movieReviewMap.put(movie4.movieName, movie4.movieReviewRating);
-    movieReviewMap.put(movie5.movieName, movie5.movieReviewRating);
-    movieReviewMap.entrySet().stream()
-        .filter(entry -> entry.getValue() >= 4.0)
-        .map(entry -> "タイトル:" + entry.getKey() + "　評価数：" + entry.getValue())
-        .forEach(System.out::println);
+    movieReviewMap.put(movieName, movieReviewRating);
     return movieReviewMap;
   }
 
   @Override
   public void extraction() {
-    System.out.println("高評価の邦画は以下の通りです。");
   }
 }
+
+
